@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-page="events" data-bs-theme="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<title>Nash House | House Events</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+			<div class="container-lg">
+				<a class="navbar-brand" href="index.html">NASH HOUSE</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#offcanvasNavbar"
+					aria-controls="offcanvasNavbar"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="offcanvas offcanvas-end"
+					tabindex="-1"
+					id="offcanvasNavbar"
+					aria-labelledby="offcanvasNavbarLabel"
+				>
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+							NASH HOUSE
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="offcanvas"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="offcanvas-body">
+						<ul
+							class="navbar-nav justify-content-end flex-grow-1 pe-3"
+						>
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="team.html">Team</a>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link active"
+									aria-current="page"
+									href="events.html"
+									>Events</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="news.html">News</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="gallery.html"
+									>Gallery</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="resources.html"
+									>Resources</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="alumni.html"
+									>Alumni</a
+								>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Theme
+								</a>
+								<ul class="dropdown-menu theme">
+									<li>
+										<a class="dropdown-item active" href="#"
+											><i class="fa fa-sun-o me-3"></i
+											>Light</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											><i class="fa fa-moon-o me-3"></i
+											>Dark</a
+										>
+									</li>
+									<li>
+										<a class="dropdown-item" href="#"
+											><i class="fa fa-adjust me-3"></i
+											>Auto</a
+										>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header>
+			<div class="container-lg text-center header">
+				<h1>House Events</h1>
+			</div>
+		</header>
+
+		<div class="wrapper">
+			<section class="d-flex container-lg">
+				<aside>
+					<h3>On this page</h3>
+					<ul>
+						<li><a href="#this-month">This Month</a></li>
+						<li><a href="#easter">Easter Term</a></li>
+						<li><a href="#trinity">Trinity Term</a></li>
+						<li><a href="#michaelmas">Michaelmas Term</a></li>
+					</ul>
+				</aside>
+
+				<main>
+					<header>
+						<div>
+							<h1 class="text-center">House Events</h1>
+						</div>
+					</header>
+
+					<section>
+						<h2 id="this-month">This Month</h2>
+						<hr />
+						<div id="this-month-events">
+							<!-- <div class="event-container d-flex mb-4">
+                            <p class="event-date">
+                                11 Jan
+                            </p>
+                            <div class="event-details">
+                                <h5 class="event-title">Remove Camp</h5>
+                            </div>
+                        </div> -->
+						</div>
+					</section>
+
+					<section>
+						<h2 id="easter">Easter Term</h2>
+						<hr />
+						<div id="easter-events">
+							<!-- <div class="event-container d-flex mb-4">
+                            <p class="event-date">
+                                11 Jan
+                            </p>
+                            <div class="event-details">
+                                <h5 class="event-title">Remove Camp</h5>
+                            </div>
+                        </div>
+                        <div class="event-container d-flex mb-4">
+                            <p class="event-date">
+                                01 Feb
+                            </p>
+                            <div class="event-details">
+                                <h5 class="event-title">Inter-House Swimming</h5>
+                            </div>
+                        </div>
+                        <div class="event-container d-flex mb-4">
+                            <p class="event-date">
+                                08 Feb
+                            </p>
+                            <div class="event-details">
+                                <h5 class="event-title">Meet the Parents</h5>
+                            </div>
+                        </div> -->
+						</div>
+					</section>
+
+					<section>
+						<h2 id="trinity">Trinity Term</h2>
+						<hr />
+						<div id="trinity-events"></div>
+					</section>
+
+					<section>
+						<h2 id="michaelmas">Michaelmas Term</h2>
+						<hr />
+						<div id="michaelmas-events"></div>
+					</section>
+				</main>
+			</section>
+
+			<footer class="page-section">
+				<div class="container-lg">
+					<div class="first-wrapper d-flex">
+						<div>
+							<h4>Contacts</h4>
+							<ul>
+								<li>
+									<b>Address:</b> <br />Nash House <br />St
+									John's College <br />St David Road
+									<br />2198
+								</li>
+								<li><b>Phone:</b> <br />(011) 645 3128</li>
+								<li>
+									<b>Email:</b> <br /><a href=""
+										>nash-house@sjc.co.za</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h4>Quick Links</h4>
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="team.html">Team</a></li>
+								<li><a href="events.html">Events</a></li>
+								<li><a href="news.html">News</a></li>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="resources.html">Resources</a></li>
+								<li><a href="alumni.html">Alumni</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="second-wrapper d-flex">
+						<div>
+							<h4>Socials</h4>
+							<ul>
+								<li>
+									<a href=""
+										><i class="fa fa-instagram"></i
+									></a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<img
+								src="assets/media/brand/house-crest.svg"
+								alt=""
+								width="200"
+							/>
+						</div>
+					</div>
+				</div>
+				<span class="container-lg"
+					>&copy;
+					<script>
+						document.write(new Date().getFullYear());
+					</script>
+					Nash House. All rights reserved</span
+				>
+			</footer>
+		</div>
+
+		<script src="vendors/bootstrap/js/bootstrap.bundle.js"></script>
+		<script type="module" src="assets/js/main.js"></script>
+	</body>
+</html>
