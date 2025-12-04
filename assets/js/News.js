@@ -34,7 +34,7 @@ const news = [
 		"2024 House Report",
 		"Thomas Kruger, Head of House",
 		["This year, Nash House demonstrated its unity, resilience and competitive edge across a wide range of events, making it a truly memorable year. Competing against the other eight Houses, we stood out in various activities, and each one played a key role in our success. Here's a chronological recap of our performance throughout the year:"],
-		"https://docs.google.com/document/d/1hatsivOU_gtEil-hoGgJQBlfSebMGI4HcVm1ENLpK3c/view?tab=t.0",
+		"https://drive.google.com/file/d/1LD-Y6KtZ5OWQZHv4NavsRayEPG36jrER/view?usp=drive_link",
 		"2024-12-01",
 		"assets/media/images/gallery/2024/2024-nash-29.jpg",
 		"Nash 1st Rugby Team winning Inter-House Rugby 2024"
@@ -42,6 +42,7 @@ const news = [
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
+
 
 
 
