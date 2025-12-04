@@ -41,6 +41,7 @@ export function buildNewsCard(news) {
 	const link = document.createElement("a");
 
 	card.classList.add("card");
+	card.style.width = "18rem";
 
 	image.setAttribute("src", news.imageSRC);
 	image.setAttribute("alt", news.imageALT);
@@ -109,4 +110,5 @@ export function buildMedia(media) {
 
 	return content;
 }
+
 
