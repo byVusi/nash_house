@@ -45,7 +45,7 @@ export function buildNewsCard(news) {
 
 	image.setAttribute("src", news.imageSRC);
 	image.setAttribute("alt", news.imageALT);
-	image.classList.add("card-img-top");
+	image.classList.add("card-img-top", "fixed-img");
 
 	body.classList.add("card-body");
 
@@ -110,6 +110,7 @@ export function buildMedia(media) {
 
 	return content;
 }
+
 
 
 
