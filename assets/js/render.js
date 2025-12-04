@@ -47,7 +47,9 @@ const michaelmasEvents = document.querySelector(
 export function renderCards(container, buildFn, array, numOfCards) {
 	if (!container) {
 		console.error(
-			"Oops! Container[" + container + "] does not exist. No action taken."
+			"Oops! Container[" +
+				container +
+				"] does not exist. No action taken."
 		);
 		return;
 	}
@@ -120,7 +122,9 @@ function filterNews() {
 		// Last month
 		if (
 			(newsMonth === currentMonth - 1 && newsYear === currentYear) ||
-			(currentMonth === 0 && newsMonth === 11 && newsYear === currentYear - 1)
+			(currentMonth === 0 &&
+				newsMonth === 11 &&
+				newsYear === currentYear - 1)
 		) {
 			categorisedNews["last month"].push(newsItem);
 		}
@@ -209,7 +213,9 @@ function filterMedia() {
 		// Last month
 		if (
 			(mediaMonth === currentMonth - 1 && mediaYear === currentYear) ||
-			(currentMonth === 0 && mediaMonth === 11 && mediaYear === currentYear - 1)
+			(currentMonth === 0 &&
+				mediaMonth === 11 &&
+				mediaYear === currentYear - 1)
 		) {
 			categorisedMedia["last month"].push(mediaItem);
 		}
@@ -238,7 +244,9 @@ function filterMedia() {
 		// Last term (Previous term based on academic calendar)
 		if (
 			(mediaMonth >= 4 && mediaMonth <= 7 && mediaYear === currentYear) || // 2nd term was last term (May-Aug)
-			(mediaMonth >= 8 && mediaMonth <= 11 && mediaYear === currentYear - 1) // 3rd term was last term (Sep-Dec)
+			(mediaMonth >= 8 &&
+				mediaMonth <= 11 &&
+				mediaYear === currentYear - 1) // 3rd term was last term (Sep-Dec)
 		) {
 			categorisedMedia["last term"].push(mediaItem);
 		} else if (
@@ -264,7 +272,12 @@ function filterMedia() {
 export function render() {
 	if (page?.dataset.page === "home") {
 		sortedEvents.length >= 3
-			? renderCards(featuredEvents, buildFeaturedEventCard, sortedEvents, 3)
+			? renderCards(
+					featuredEvents,
+					buildFeaturedEventCard,
+					sortedEvents,
+					3
+			  )
 			: renderCards(
 					featuredEvents,
 					buildFeaturedEventCard,
@@ -273,7 +286,12 @@ export function render() {
 			  );
 		sortedNews.length >= 3
 			? renderCards(recentNews, buildNewsCard, sortedNews, 3)
-			: renderCards(recentNews, buildNewsCard, sortedNews, sortedNews.length);
+			: renderCards(
+					recentNews,
+					buildNewsCard,
+					sortedNews,
+					sortedNews.length
+			  );
 	}
 
 	if (page?.dataset.page === "events") {
@@ -314,7 +332,9 @@ export function render() {
 		newsFilterOptionItem.addEventListener("click", (e) => {
 			const clickedItem = event.target.closest("li");
 			if (!clickedItem) {
-				console.warn("[News Card Filter] Clicked item is not a valid item.");
+				console.warn(
+					"[News Card Filter] Clicked item is not a valid item."
+				);
 				return;
 			}
 
@@ -354,7 +374,9 @@ export function render() {
 		mediaFilterOptionItem.addEventListener("click", (e) => {
 			const clickedItem = event.target.closest("li");
 			if (!clickedItem) {
-				console.warn("[Media Filter] Clicked item is not a valid item.");
+				console.warn(
+					"[Media Filter] Clicked item is not a valid item."
+				);
 				return;
 			}
 
