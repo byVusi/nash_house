@@ -24,7 +24,7 @@ const news = [
 	new News(
 		"2025 House Report",
 		"Mila Xego, Head of House",
-		"",
+		[""],
 		"",
 		"2025-12-04",
 		"assets/media/images/gallery/2024/2024-nash-9.jpg",
@@ -42,6 +42,7 @@ const news = [
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
+
 
 
 
