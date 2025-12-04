@@ -107,10 +107,12 @@ export function buildEventCard(event) {
 export function buildMedia(media) {
 	const content = document.createElement("img");
 	content.setAttribute("src", media.imageSRC);
+	content.setAttribute("loading", "lazy");
 	content.setAttribute("alt", media.imageALT);
 
 	return content;
 }
+
 
 
 
