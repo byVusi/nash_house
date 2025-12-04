@@ -58,8 +58,8 @@ export function buildNewsCard(news) {
 	text.classList.add("card-text");
 	text.textContent =
 		news.text[0].trim().slice(-1) !== "."
-			? news.text[0].trim().slice(0, 140) + "..."
-			: news.text[0].trim().slice(0, 140) + "..";
+			? news.text[0].trim().slice(0, 120) + "..."
+			: news.text[0].trim().slice(0, 120) + "..";
 
 	link.classList.add("card-link");
 	link.setAttribute("href", news.linkHREF);
@@ -110,5 +110,6 @@ export function buildMedia(media) {
 
 	return content;
 }
+
 
 
