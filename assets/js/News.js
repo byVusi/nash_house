@@ -21,8 +21,6 @@ export class News {
 }
 
 const news = [
-	// 2026 News
-	
 	// 2025 News
 	new News(
 		"2025 House Report",
@@ -36,11 +34,3 @@ const news = [
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
-
-
-
-
-
-
-
-
