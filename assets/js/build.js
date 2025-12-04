@@ -69,6 +69,7 @@ export function buildNewsCard(news) {
 	body.appendChild(text);
 	body.appendChild(link);
 
+	image.setAttribute("loading","lazy");
 	card.appendChild(image);
 	card.appendChild(body);
 
@@ -108,3 +109,4 @@ export function buildMedia(media) {
 
 	return content;
 }
+
