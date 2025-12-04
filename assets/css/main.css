@@ -124,6 +124,7 @@ footer>div {
 .fixed-img {
   height: 200px;       /* Set the height you want */
   object-fit: cover;   /* Prevent distortion, crop instead */
+  object-position: top;
   width: 100%;         /* Ensure full width */
 }
 
@@ -716,4 +717,5 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 /* Extra extra large devices (xxl) and up (>= 87.5rem) */
 
 @media (min-width: 87.5rem) {}
+
 
