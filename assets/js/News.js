@@ -22,40 +22,15 @@ export class News {
 
 const news = [
 	new News(
-		"Untitled Jan",
-		"The subtitle",
-		"Lorem ipsum bla bla bla",
+		"2024 House Report",
+		"Victorious, indeed!",
+		"This year, Nash House demonstrated its unity, resilience and competitive edge across a wide range of events, making it a truly memorable year. Competing against the other eight Houses, we stood out in various activities, and each one played a key role in our success.",
 		"#",
-		"2024-01-12"
-	),
-	new News(
-		"Untitled Feb",
-		"The subtitle",
-		"Lorem ipsum bla bla bla",
-		"#",
-		"2024-02-12"
-	),
-	new News(
-		"Untitled May",
-		"The subtitle",
-		"Lorem ipsum bla bla bla",
-		"#",
-		"2024-05-12"
-	),
-	new News(
-		"Untitled Sep",
-		"The subtitle",
-		"Lorem ipsum bla bla bla",
-		"#",
-		"2024-09-12"
-	),
-	new News(
-		"Untitled Dec",
-		"The subtitle",
-		"Lorem ipsum bla bla bla",
-		"#",
-		"2024-12-12"
-	),
+		"2024-12-01",
+		"assets/media/images/gallery/2024/2024-nash-29.jpg",
+		"Nash 1st Rugby Team winning Inter-House Rugby 2024"
+		)
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
+
