@@ -115,10 +115,16 @@ footer>div {
 
 .media-cards img {
     width: 100%;
-    height: 12.5rem;
+    /* height: 12.5rem;
     object-fit: cover;
     object-position: top;
-    border-radius: 0.3125rem
+    border-radius: 0.3125rem */
+}
+
+.fixed-img {
+  height: 200px;       /* Set the height you want */
+  object-fit: cover;   /* Prevent distortion, crop instead */
+  width: 100%;         /* Ensure full width */
 }
 
 .about-us-cards,
@@ -710,3 +716,4 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 /* Extra extra large devices (xxl) and up (>= 87.5rem) */
 
 @media (min-width: 87.5rem) {}
+
