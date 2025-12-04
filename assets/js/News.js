@@ -22,6 +22,15 @@ export class News {
 
 const news = [
 	new News(
+		"2025 House Report",
+		"Mila Xego, Head of House",
+		"",
+		"",
+		"2025-12-04",
+		"assets/media/images/gallery/2024/2024-nash-9.jpg",
+		"Mila Xego and Luke Brooks, Head of House and Deputy Head of House, respectively"
+	),
+	new News(
 		"2024 House Report",
 		"Thomas Kruger, Head of House",
 		"This year, Nash House demonstrated its unity, resilience and competitive edge across a wide range of events, making it a truly memorable year. Competing against the other eight Houses, we stood out in various activities, and each one played a key role in our success.",
@@ -33,5 +42,6 @@ const news = [
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
+
 
 
