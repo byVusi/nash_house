@@ -33,9 +33,9 @@ main header {
     gap: 4rem;
 }
 
-header:not([data-page="home"] header){
+/* header:not([data-page="home"] header){
     height: 100%;
-}
+} */
 
 [data-bs-theme="light"] header:not([data-page="home"] header) {
     background-color: var(--blue-100);
@@ -708,4 +708,5 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 @media (min-width: 75rem) {}
 
 /* Extra extra large devices (xxl) and up (>= 87.5rem) */
+
 @media (min-width: 87.5rem) {}
