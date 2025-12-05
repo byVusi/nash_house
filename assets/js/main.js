@@ -1,3 +1,10 @@
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker
+		.register("../../sw.js")
+		.then(() => console.log("✅ Service Worker registered"))
+		.catch((err) => console.error("❌ Service Worker failed:", err));
+}
+
 import { setupTheme } from "./theme.js";
 import { handleEventListeners } from "./eventHandlers.js";
 import { render } from "./render.js";
