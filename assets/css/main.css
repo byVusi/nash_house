@@ -113,13 +113,13 @@ footer>div {
     gap: 0.8rem;
 }
 
-/*.media-cards img {
+.media-cards img {
     width: 100%;
     height: 12.5rem;
     object-fit: cover;
     object-position: top;
     border-radius: 0.3125rem;
-}*/
+}
 
 .fixed-img {
   width: 100%;
