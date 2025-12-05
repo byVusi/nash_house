@@ -1,0 +1,37 @@
+{
+	"name": "Nash House",
+	"short_name": "Nash House",
+	"description": "Nash House - Website for Nash House",
+	"scope": "/nash_house/",
+	"start_url": "/nash_house/",
+	"dir": "ltr",
+	"lang": "en-ZA",
+	"prefer_related_applications": false,
+	"categories": ["lifestyle"],
+	"orientation": "portrait",
+	"display": "standalone",
+	"background_color": "#faf9f9",
+	"theme_color": "#99c2ff",
+	"icons": [
+		{
+			"src": "./favicon/apple-icon.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "./icon-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "./favicon/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "./favicon/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
