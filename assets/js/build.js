@@ -63,7 +63,6 @@ export function buildNewsCard(news) {
 
 	link.classList.add("card-link");
 	link.setAttribute("href", news.linkHREF);
-	link.setAttribute("target", "_blank");
 	link.textContent = "Read more";
 
 	body.appendChild(title);
