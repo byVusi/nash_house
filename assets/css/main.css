@@ -113,13 +113,13 @@ footer>div {
     gap: 0.8rem;
 }
 
-.media-cards img {
+/*.media-cards img {
     width: 100%;
     height: 12.5rem;
     object-fit: cover;
     object-position: top;
     border-radius: 0.3125rem;
-}
+}*/
 
 .fixed-img {
   width: 100%;
@@ -141,6 +141,10 @@ footer>div {
 .about-us-cards .card {
     border: none;
     flex: 1;
+}
+
+.news-cards .card {
+    width: 100%;
 }
 
 .card-icon {
@@ -555,11 +559,18 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 
     .about-us-cards,
     .event-cards,
-    .news-cards,
     .form-container,
     footer > div,
     .wrapper > section {
         flex-flow: row nowrap;
+    }
+    
+    .news-cards {
+        flex-flow: row wrap;
+    } 
+    
+    .news-cards .card {
+        max-width: 18rem;
     }
 
     .wrapper > section {
