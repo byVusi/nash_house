@@ -1,7 +1,7 @@
 {
 	"name": "Nash House",
 	"short_name": "Nash House",
-	"description": "Nash House - Website for Nash House",
+	"description": "Nash House - Conando Vincimus. The House website for all things Nash.",
 	"scope": "/nash_house/",
 	"start_url": "/nash_house/",
 	"dir": "ltr",
