@@ -25,7 +25,7 @@ const FILES_TO_CACHE = [
 	"./assets/js/News.js",
 	"./assets/js/render.js",
 	"./assets/js/theme.js",
-	"./asstes/js/utils.js",
+	"./assets/js/utils.js",
 	"./assets/media/brand/house-crest.svg",
 ];
 
