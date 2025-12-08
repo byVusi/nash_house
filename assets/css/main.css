@@ -546,6 +546,24 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 	background-color: var(--blue-600);
 }
 
+.offline-wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 2rem;
+}
+.offline-icon {
+	font-size: 4rem;
+	opacity: 0.4;
+	margin-bottom: 1rem;
+}
+.offline-buttons a {
+	margin: 0.5rem;
+}
+
 /* Small devices (sm) and up (>= 36rem) */
 @media (min-width: 36rem) {
 }
