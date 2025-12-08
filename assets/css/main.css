@@ -143,6 +143,10 @@ footer>div {
     flex: 1;
 }
 
+.news-cards .card {
+    width: 100%;
+}
+
 .card-icon {
     width: 48px;
     height: 48px;
@@ -555,11 +559,18 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 
     .about-us-cards,
     .event-cards,
-    .news-cards,
     .form-container,
     footer > div,
     .wrapper > section {
         flex-flow: row nowrap;
+    }
+    
+    .news-cards {
+        flex-flow: row wrap;
+    } 
+    
+    .news-cards .card {
+        max-width: 18rem;
     }
 
     .wrapper > section {

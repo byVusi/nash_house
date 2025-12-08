@@ -41,7 +41,6 @@ export function buildNewsCard(news) {
 	const link = document.createElement("a");
 
 	card.classList.add("card");
-	card.style.width = "18rem";
 
 	image.setAttribute("src", news.imageSRC);
 	image.setAttribute("alt", news.imageALT);
@@ -63,7 +62,6 @@ export function buildNewsCard(news) {
 
 	link.classList.add("card-link");
 	link.setAttribute("href", news.linkHREF);
-	link.setAttribute("target", "_blank");
 	link.textContent = "Read more";
 
 	body.appendChild(title);
