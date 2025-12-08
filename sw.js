@@ -4,7 +4,7 @@
  * and serves cached assets when offline.
  */
 
-const CACHE_NAME = "nash_house_v1";
+const CACHE_NAME = "nash_house_v2";
 
 /**
  * List of static assets to cache during the install event.
