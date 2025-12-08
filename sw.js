@@ -1,14 +1,15 @@
-// /**
-//  * @fileoverview Basic service worker script for offline support.
-//  * Caches specified assets during installation, removes old caches on activation,
-//  * and serves cached assets when offline.
-//  */
-const CACHE_VERSION = "v1";
-const PRECACHE = `nash_house-precache-${CACHE_VERSION}`;
-const RUNTIME = `nash_house-runtime-${CACHE_VERSION}`;
-const IMAGE_CACHE = `nash_house-images-${CACHE_VERSION}`;
+/**
+ * @fileoverview Basic service worker script for offline support.
+ * Caches specified assets during installation, removes old caches on activation,
+ * and serves cached assets when offline.
+ */
 
-// Critical files for offline usage
+const CACHE_NAME = "nash_house-cache-v1";
+
+/**
+ * List of static assets to cache during the install event.
+ * @constant {string[]}
+ */
 const FILES_TO_CACHE = [
 	"/",
 	"/index.html",
@@ -31,139 +32,64 @@ const FILES_TO_CACHE = [
 ];
 
 /**
- * Install: precache essential files
+ * Install event handler.
+ * Caches all files listed in FILES_TO_CACHE.
+ *
+ * @param {ExtendableEvent} event - The install event.
  */
-self.addEventListener("install", (event) => {
+self.addEventListener("install", function (event) {
 	event.waitUntil(
-		caches.open(PRECACHE).then((cache) => cache.addAll(FILES_TO_CACHE))
+		caches.open(CACHE_NAME).then(function (cache) {
+			return Promise.all(
+				FILES_TO_CACHE.map(function (file) {
+					return fetch(file).then(function (response) {
+						if (!response.ok) {
+							throw new Error(
+								"Request failed for: " +
+									file +
+									" (" +
+									response.status +
+									")"
+							);
+						}
+						return cache.put(file, response.clone());
+					});
+				})
+			);
+		})
 	);
 	self.skipWaiting();
 });
 
 /**
- * Activate: cleanup old caches
+ * Activate event handler.
+ * Removes old caches that don’t match the current CACHE_NAME.
+ *
+ * @param {ExtendableEvent} event - The activate event.
  */
-self.addEventListener("activate", (event) => {
-	const expectedCaches = [PRECACHE, RUNTIME, IMAGE_CACHE];
+self.addEventListener("activate", function (event) {
 	event.waitUntil(
-		caches
-			.keys()
-			.then((keys) =>
-				Promise.all(
-					keys.map((key) => {
-						if (!expectedCaches.includes(key))
-							return caches.delete(key);
-						return Promise.resolve();
-					})
-				)
-			)
-			.then(() => self.clients.claim())
+		caches.keys().then(function (keys) {
+			return Promise.all(
+				keys
+					.filter((key) => key !== CACHE_NAME)
+					.map((key) => caches.delete(key))
+			);
+		})
 	);
+	self.clients.claim(); // Takes control of uncontrolled clients as soon as it activates.
 });
 
 /**
- * Fetch handler
- * - Stale-while-revalidate for JS/CSS and HTML (fast loads, updates in background)
- * - Cache-first for images (fast visual load, updates in background)
- * - Network-only for API calls
+ * Fetch event handler.
+ * Responds with cached resources when available, otherwise fetches from the network.
+ *
+ * @param {FetchEvent} event - The fetch event.
  */
-self.addEventListener("fetch", (event) => {
-	const { request } = event;
-	const url = new URL(request.url);
-
-	// Skip non-GET requests
-	if (request.method !== "GET") return;
-
-	// Never cache API requests
-	if (url.pathname.startsWith("/api/") || url.pathname.includes("/api/")) {
-		event.respondWith(
-			fetch(request).catch(
-				() =>
-					new Response(JSON.stringify({ error: "offline" }), {
-						status: 503,
-						headers: { "Content-Type": "application/json" },
-					})
-			)
-		);
-		return;
-	}
-
-	// Navigation (HTML pages) - stale-while-revalidate
-	if (request.mode === "navigate") {
-		event.respondWith(
-			(async () => {
-				const cache = await caches.open(RUNTIME);
-				const cachedResponse = await cache.match(request);
-				const networkFetch = fetch(request)
-					.then((res) => {
-						if (res && res.ok && res.type === "basic")
-							cache.put(request, res.clone());
-						return res;
-					})
-					.catch(() => null);
-				// Return cached immediately if available, otherwise network
-				return (
-					cachedResponse ||
-					(await networkFetch) ||
-					(await caches.match("/offline.html"))
-				);
-			})()
-		);
-		return;
-	}
-
-	// JS/CSS - stale-while-revalidate
-	if (
-		request.destination === "script" ||
-		request.destination === "style" ||
-		/\.(js|css)$/.test(url.pathname)
-	) {
-		event.respondWith(
-			(async () => {
-				const cache = await caches.open(RUNTIME);
-				const cachedResponse = await cache.match(request);
-				const networkFetch = fetch(request)
-					.then((res) => {
-						if (res && res.ok && res.type === "basic")
-							cache.put(request, res.clone());
-						return res;
-					})
-					.catch(() => null);
-				return cachedResponse || (await networkFetch);
-			})()
-		);
-		return;
-	}
-
-	// Images - cache-first with background update
-	if (
-		request.destination === "image" ||
-		/\.(png|jpg|jpeg|svg|gif|webp)$/.test(url.pathname)
-	) {
-		event.respondWith(
-			(async () => {
-				const cache = await caches.open(IMAGE_CACHE);
-				const cachedResponse = await cache.match(request);
-				const fetchPromise = fetch(request)
-					.then((res) => {
-						if (res && res.ok && res.type === "basic")
-							cache.put(request, res.clone());
-					})
-					.catch(() => {});
-				if (cachedResponse) return cachedResponse;
-				await fetchPromise;
-				return (
-					caches.match(request) || new Response(null, { status: 503 })
-				);
-			})()
-		);
-		return;
-	}
-
-	// Default fallback: network, then cache
+self.addEventListener("fetch", function (event) {
 	event.respondWith(
-		fetch(request)
-			.then((res) => res)
-			.catch(() => caches.match(request) || caches.match("/offline.html"))
+		caches.match(event.request).then(function (response) {
+			return response || fetch(event.request);
+		})
 	);
 });
