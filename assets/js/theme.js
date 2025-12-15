@@ -35,7 +35,6 @@ function applyTheme(theme, isAuto = false) {
  * @param {Event} event - The event object associated with the dropdown item click.
  */
 export function toggleTheme(event) {
-	event.preventDefault();
 	const clickedDropdownItem = event.target.closest("li");
 	if (!clickedDropdownItem) {
 		console.warn("[THEME] Clicked item is not a valid dropdown item.");
