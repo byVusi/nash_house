@@ -14,7 +14,6 @@ const FILES_TO_CACHE = [
 	"/",
 	"/index.html",
 	"/offline.html",
-	"/index.html",
 	"/apple-touch-icon.png",
 	"/assets/css/colors.css",
 	"/assets/css/main.css",
