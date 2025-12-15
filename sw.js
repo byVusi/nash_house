@@ -11,7 +11,6 @@ const CACHE_NAME = "nash_house-cache-v1";
  * @constant {string[]}
  */
 const FILES_TO_CACHE = [
-	"/",
 	"/index.html",
 	"/offline.html",
 	"/apple-touch-icon.png",
