@@ -7,7 +7,7 @@ export class News {
 		text,
 		linkHREF,
 		date,
-		imageSRC = "https://fakeimg.pl/600x400",
+		imageSRC = "./assets/media/images/placeholder.jpg",
 		imageALT
 	) {
 		this.title = title;
