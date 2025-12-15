@@ -52,7 +52,7 @@ main header {
 }
 
 .image img {
-	display: inherit;
+	display: none;
 }
 
 /* BODY */
