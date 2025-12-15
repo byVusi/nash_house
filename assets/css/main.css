@@ -51,6 +51,10 @@ main header {
 	display: none;
 }
 
+.image img {
+	display: inherit;
+}
+
 /* BODY */
 
 [data-page="home"] main,

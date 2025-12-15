@@ -6,27 +6,29 @@
 
 const CACHE_NAME = "nash_house-cache-v1";
 
+const BASE_PATH = "/nash_house";
+
 /**
  * List of static assets to cache during the install event.
  * @constant {string[]}
  */
 const FILES_TO_CACHE = [
-	"/index.html",
-	"/offline.html",
-	"/apple-touch-icon.png",
-	"/assets/css/colors.css",
-	"/assets/css/main.css",
-	"/assets/css/typography.css",
-	"/assets/js/build.js",
-	"/assets/js/Event.js",
-	"/assets/js/eventHandlers.js",
-	"/assets/js/main.js",
-	"/assets/js/Media.js",
-	"/assets/js/News.js",
-	"/assets/js/render.js",
-	"/assets/js/theme.js",
-	"/assets/js/utils.js",
-	"/assets/media/brand/house-crest.svg",
+	`${BASE_PATH}/index.html`,
+	`${BASE_PATH}/offline.html`,
+	`${BASE_PATH}/apple-touch-icon.png`,
+	`${BASE_PATH}/assets/css/colors.css`,
+	`${BASE_PATH}/assets/css/main.css`,
+	`${BASE_PATH}/assets/css/typography.css`,
+	`${BASE_PATH}/assets/js/build.js`,
+	`${BASE_PATH}/assets/js/Event.js`,
+	`${BASE_PATH}/assets/js/eventHandlers.js`,
+	`${BASE_PATH}/assets/js/main.js`,
+	`${BASE_PATH}/assets/js/Media.js`,
+	`${BASE_PATH}/assets/js/News.js`,
+	`${BASE_PATH}/assets/js/render.js`,
+	`${BASE_PATH}/assets/js/theme.js`,
+	`${BASE_PATH}/assets/js/utils.js`,
+	`${BASE_PATH}/assets/media/brand/house-crest.svg`,
 ];
 
 /**
