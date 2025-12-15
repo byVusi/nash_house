@@ -68,7 +68,8 @@ export function createPlaceholder(message) {
 	const page = document.querySelector("[data-page]").dataset.page;
 
 	if (page === "events") {
-		placeholder.style = "text-align: left; color: var(--gray-400); flex: 1;";
+		placeholder.style =
+			"text-align: left; color: var(--gray-400); flex: 1;";
 	}
 
 	if (page === "news") {
@@ -165,7 +166,9 @@ export function setupNewsFilter() {
 	const storedItem = localStorage.getItem("news-filter");
 
 	if (!storedItem) {
-		console.warn("[News Card Filter] No item has been found in local storage.");
+		console.warn(
+			"[News Card Filter] No item has been found in local storage."
+		);
 		return;
 	}
 
@@ -213,4 +216,9 @@ export function setupMediaFilter() {
 			item.classList.add("active");
 		}
 	});
+}
+
+export function initFilters() {
+	localStorage.setItem("media-filter", "last 7 days");
+	localStorage.setItem("news-filter", "last 7 days");
 }

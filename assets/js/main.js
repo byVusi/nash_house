@@ -8,11 +8,18 @@ if ("serviceWorker" in navigator) {
 import { setupTheme } from "./theme.js";
 import { handleEventListeners } from "./eventHandlers.js";
 import { render } from "./render.js";
-import { setupNewsFilter, setupMediaFilter } from "./utils.js";
+import { setupNewsFilter, setupMediaFilter, initFilters } from "./utils.js";
 
 setupTheme();
 handleEventListeners();
 render();
+
+if (
+	!localStorage.getItem("media-filter") &&
+	!localStorage.getItem("news-filter")
+) {
+	initFilters();
+}
 
 if (document.querySelector('[data-page="news"]')) {
 	setupNewsFilter();
