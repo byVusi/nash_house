@@ -4,7 +4,7 @@
  * and serves cached assets when offline.
  */
 
-const CACHE_NAME = "nash_house-cache-v2";
+const CACHE_NAME = "nash_house-cache-v1";
 
 const BASE_PATH = "/nash_house";
 
