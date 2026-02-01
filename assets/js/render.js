@@ -23,25 +23,25 @@ import {
 // HTML ELEMENTS
 export const page = document.querySelector("[data-page]");
 const featuredEvents = document.querySelector(
-	'[data-page="home"] .event-cards'
+	'[data-page="home"] .event-cards',
 );
 const recentNews = document.querySelector('[data-page="home"] .news-cards');
 export const news = document.querySelector('[data-page="news"] .news-cards');
 export const media = document.querySelector(
-	'[data-page="gallery"] .media-cards'
+	'[data-page="gallery"] .media-cards',
 );
 
 const thisMonthEvents = document.querySelector(
-	'[data-page="events"] #this-month-events'
+	'[data-page="events"] #this-month-events',
 );
 const easterEvents = document.querySelector(
-	'[data-page="events"] #easter-events'
+	'[data-page="events"] #easter-events',
 );
 const trinityEvents = document.querySelector(
-	'[data-page="events"] #trinity-events'
+	'[data-page="events"] #trinity-events',
 );
 const michaelmasEvents = document.querySelector(
-	'[data-page="events"] #michaelmas-events'
+	'[data-page="events"] #michaelmas-events',
 );
 
 export function renderCards(container, buildFn, array, numOfCards) {
@@ -49,7 +49,7 @@ export function renderCards(container, buildFn, array, numOfCards) {
 		console.error(
 			"Oops! Container[" +
 				container +
-				"] does not exist. No action taken."
+				"] does not exist. No action taken.",
 		);
 		return;
 	}
@@ -94,7 +94,7 @@ function filterNews() {
 	// Utility function to check if the date is within a specific range (in days)
 	const isWithinRange = (date, days) => {
 		const diffInDays = Math.floor(
-			(currentDate - new Date(date)) / (1000 * 60 * 60 * 24)
+			(currentDate - new Date(date)) / (1000 * 60 * 60 * 24),
 		);
 		return diffInDays >= 0 && diffInDays <= days;
 	};
@@ -185,7 +185,7 @@ function filterMedia() {
 	// Utility function to check if the date is within a specific range (in days)
 	const isWithinRange = (date, days) => {
 		const diffInDays = Math.floor(
-			(currentDate - new Date(date)) / (1000 * 60 * 60 * 24)
+			(currentDate - new Date(date)) / (1000 * 60 * 60 * 24),
 		);
 		return diffInDays >= 0 && diffInDays <= days;
 	};
@@ -271,27 +271,31 @@ function filterMedia() {
 
 export function render() {
 	if (page?.dataset.page === "home") {
+		const filteredEvents = sortedEvents.filter(
+			(e) => new Date(e.date).getMonth() >= new Date().getMonth(),
+		);
+		filteredEvents[0].nextEvent = true;
 		sortedEvents.length >= 3
 			? renderCards(
 					featuredEvents,
 					buildFeaturedEventCard,
-					sortedEvents,
-					3
-			  )
+					filteredEvents,
+					3,
+				)
 			: renderCards(
 					featuredEvents,
 					buildFeaturedEventCard,
 					sortedEvents,
-					sortedEvents.length
-			  );
+					sortedEvents.length,
+				);
 		sortedNews.length >= 3
 			? renderCards(recentNews, buildNewsCard, sortedNews, 3)
 			: renderCards(
 					recentNews,
 					buildNewsCard,
 					sortedNews,
-					sortedNews.length
-			  );
+					sortedNews.length,
+				);
 	}
 
 	if (page?.dataset.page === "events") {
@@ -302,27 +306,27 @@ export function render() {
 			thisMonthEvents,
 			categorisedEvents["this month"],
 			buildEventCard,
-			"No scheduled events"
+			"No scheduled events",
 		);
 		handleItemSection(
 			easterEvents,
 			categorisedEvents["easter"],
 			buildEventCard,
-			"No scheduled events"
+			"No scheduled events",
 		);
 
 		handleItemSection(
 			trinityEvents,
 			categorisedEvents["trinity"],
 			buildEventCard,
-			"No scheduled events"
+			"No scheduled events",
 		);
 
 		handleItemSection(
 			michaelmasEvents,
 			categorisedEvents["michaelmas"],
 			buildEventCard,
-			"No scheduled events"
+			"No scheduled events",
 		);
 	}
 
@@ -333,7 +337,7 @@ export function render() {
 			const clickedItem = event.target.closest("li");
 			if (!clickedItem) {
 				console.warn(
-					"[News Card Filter] Clicked item is not a valid item."
+					"[News Card Filter] Clicked item is not a valid item.",
 				);
 				return;
 			}
@@ -363,7 +367,7 @@ export function render() {
 				news,
 				categorisedNews[clickedItemTextContent],
 				buildNewsCard,
-				"No news available"
+				"No news available",
 			);
 		});
 	}
@@ -375,7 +379,7 @@ export function render() {
 			const clickedItem = event.target.closest("li");
 			if (!clickedItem) {
 				console.warn(
-					"[Media Filter] Clicked item is not a valid item."
+					"[Media Filter] Clicked item is not a valid item.",
 				);
 				return;
 			}
@@ -405,7 +409,7 @@ export function render() {
 				media,
 				categorisedMedia[clickedItemTextContent],
 				buildMedia,
-				"No media available"
+				"No media available",
 			);
 		});
 	}
