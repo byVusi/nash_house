@@ -15,6 +15,7 @@ const events = [
 	new Event("Inter-House Gala Pre-Events (Day 1)", "2026-01-26"),
 	new Event("Inter-House Gala Pre-Events (Day 2)", "2026-01-27"),
 	new Event("Inter-House Gala", "2026-01-29"),
+	new Event("Junior Inter-House Tennis", "2026-02-05"),
 	new Event("Grobs", "2026-02-18"),
 	new Event("Half Term Starts", "2026-02-19"),
 	new Event("Half Term Ends", "2026-02-24"),
