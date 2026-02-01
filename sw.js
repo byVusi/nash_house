@@ -4,7 +4,7 @@
  * and serves cached assets when offline.
  */
 
-const CACHE_NAME = "nash_house-cache-v1.0";
+const CACHE_NAME = "nash_house-cache-v1.1";
 
 const BASE_PATH = "/nash_house";
 
@@ -49,14 +49,14 @@ self.addEventListener("install", function (event) {
 									file +
 									" (" +
 									response.status +
-									")"
+									")",
 							);
 						}
 						return cache.put(file, response.clone());
 					});
-				})
+				}),
 			);
-		})
+		}),
 	);
 	self.skipWaiting();
 });
@@ -73,9 +73,9 @@ self.addEventListener("activate", function (event) {
 			return Promise.all(
 				keys
 					.filter((key) => key !== CACHE_NAME)
-					.map((key) => caches.delete(key))
+					.map((key) => caches.delete(key)),
 			);
-		})
+		}),
 	);
 	self.clients.claim(); // Takes control of uncontrolled clients as soon as it activates.
 });
@@ -90,6 +90,6 @@ self.addEventListener("fetch", function (event) {
 	event.respondWith(
 		caches.match(event.request).then(function (response) {
 			return response || fetch(event.request);
-		})
+		}),
 	);
 });
