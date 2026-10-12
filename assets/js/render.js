@@ -274,7 +274,9 @@ export function render() {
 		const filteredEvents = sortedEvents.filter(
 			(e) => new Date(e.date).getMonth() >= new Date().getMonth(),
 		);
-		filteredEvents[0].nextEvent = true;
+
+		if (filteredEvents.length > 1) filteredEvents[0].nextEvent = true;
+
 		sortedEvents.length >= 3
 			? renderCards(
 					featuredEvents,

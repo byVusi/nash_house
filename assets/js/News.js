@@ -43,9 +43,13 @@ const news = [
 			"If there is one thing this year taught us, it is that the true strength of a House is not measured by the trophies or wins, but by the way its boys stand together through every victory and every setback. Although not every Inter-House event went as planned, through both the wins and the losses, there were always laughs, smiles and an undeniable sense of Nash gees.",
 		],
 		"/nash_house/assets/articles/2026_house_report.html",
-		"assets/media/images/gallery/2026/2026_in_common_room.jpg",
+		"2026-10-12",
+		"assets/media/images/gallery/2026/2026-nash-0.webp",
 		"Nash boys in the common room",
 	),
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
+
+// Special CSS styling applied when true
+sortedNews[0].nextEvent = true;
