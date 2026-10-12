@@ -8,7 +8,7 @@ export class News {
 		linkHREF,
 		date,
 		imageSRC = "./assets/media/images/placeholder.jpg",
-		imageALT
+		imageALT,
 	) {
 		this.title = title;
 		this.subtitle = subtitle;
@@ -31,7 +31,20 @@ const news = [
 		"/nash_house/assets/articles/2025_house_report.html",
 		"2025-12-04",
 		"assets/media/images/gallery/2025/2025-nash-4.jpg",
-		"Mila Xego and Luke Brooks, Head of House and Deputy Head of House, respectively"
+		"Mila Xego and Luke Brooks, Head of House and Deputy Head of House, respectively",
+	),
+
+	// 2026 News
+
+	new News(
+		"2025 House Report",
+		"Christopher Chapman, Head of House",
+		[
+			"If there is one thing this year taught us, it is that the true strength of a House is not measured by the trophies or wins, but by the way its boys stand together through every victory and every setback. Although not every Inter-House event went as planned, through both the wins and the losses, there were always laughs, smiles and an undeniable sense of Nash gees.",
+		],
+		"/nash_house/assets/articles/2026_house_report.html",
+		"assets/media/images/gallery/2026/2026_in_common_room.jpg",
+		"",
 	),
 ];
 
