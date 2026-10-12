@@ -336,7 +336,7 @@ export function render() {
 		filterNews();
 
 		newsFilterOptionItem.addEventListener("click", (e) => {
-			const clickedItem = event.target.closest("li");
+			const clickedItem = e.target.closest("li");
 			if (!clickedItem) {
 				console.warn(
 					"[News Card Filter] Clicked item is not a valid item.",
@@ -378,7 +378,7 @@ export function render() {
 		filterMedia();
 
 		mediaFilterOptionItem.addEventListener("click", (e) => {
-			const clickedItem = event.target.closest("li");
+			const clickedItem = e.target.closest("li");
 			if (!clickedItem) {
 				console.warn(
 					"[Media Filter] Clicked item is not a valid item.",
