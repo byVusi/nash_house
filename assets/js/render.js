@@ -76,7 +76,7 @@ function categoriseEvents() {
 		if (month === currentMonth) {
 			categorisedEvents["this month"].push(e);
 		} else if (month < 5) {
-			categorisedEvents["easter"].push(e);
+			categorisedEvents.easter.push(e);
 		} else if (month >= 5 && month < 9) {
 			categorisedEvents["trinity"].push(e);
 		} else {
