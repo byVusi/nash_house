@@ -37,8 +37,8 @@ const news = [
 	// 2026 News
 
 	new News(
-		"2025 House Report",
-		"Christopher Chapman, Head of House",
+		"2026 House Report",
+		"Chris Chapman, Head of House",
 		[
 			"If there is one thing this year taught us, it is that the true strength of a House is not measured by the trophies or wins, but by the way its boys stand together through every victory and every setback. Although not every Inter-House event went as planned, through both the wins and the losses, there were always laughs, smiles and an undeniable sense of Nash gees.",
 		],
