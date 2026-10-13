@@ -29,7 +29,7 @@ for (let i = 0; i < 6; i++) {
 	media.push(
 		new Media(
 			"2026-10-12",
-			`assets/media/images/gallery/2026/2026-nash-${i}.webp`,
+			`assets/media/images/gallery/2026/2026-nash-${i}.jpg`,
 		),
 	);
 }

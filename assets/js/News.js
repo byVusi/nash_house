@@ -44,7 +44,7 @@ const news = [
 		],
 		"/nash_house/assets/articles/2026_house_report.html",
 		"2026-10-12",
-		"assets/media/images/gallery/2026/2026-nash-0.webp",
+		"assets/media/images/gallery/2026/2026-nash-0.jpg",
 		"Nash boys in the common room",
 	),
 ];
