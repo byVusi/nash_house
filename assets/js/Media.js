@@ -4,7 +4,7 @@ export class Media {
 	constructor(
 		date,
 		imageSRC = "./assets/media/images/placeholder.jpg",
-		imageALT = ""
+		imageALT = "",
 	) {
 		this.date = date;
 		this.imageSRC = imageSRC;
@@ -19,8 +19,18 @@ for (let i = 0; i < 18; i++) {
 	media.push(
 		new Media(
 			"2025-12-04",
-			`assets/media/images/gallery/2025/2025-nash-${i}.jpg`
-		)
+			`assets/media/images/gallery/2025/2025-nash-${i}.jpg`,
+		),
+	);
+}
+
+// 2026 uploads
+for (let i = 0; i < 2; i++) {
+	media.push(
+		new Media(
+			"2026-10-12",
+			`assets/media/images/gallery/2026/2026-nash-${i}.webp`,
+		),
 	);
 }
 
