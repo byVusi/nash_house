@@ -568,6 +568,10 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 	margin: 0.5rem;
 }
 
+div aside {
+	display: none;
+}
+
 /* Small devices (sm) and up (>= 36rem) */
 @media (min-width: 36rem) {
 }
@@ -576,6 +580,10 @@ main section:last-of-type:not([data-page="home"] main section:last-of-type) {
 @media (min-width: 48rem) {
 	nav + header:not([data-page="home"] nav + header) {
 		display: none;
+	}
+
+	div aside {
+		display: block;
 	}
 
 	aside + main {
