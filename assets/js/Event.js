@@ -17,4 +17,4 @@ const events = [
 export const sortedEvents = sortObjectsByDate(events, "date", true);
 
 // Special CSS styling applied when true
-sortedEvents[0].nextEvent = true;
+if (sortedEvents.length > 0) sortedEvents[0].nextEvent = true;
