@@ -47,6 +47,18 @@ const news = [
 		"assets/media/images/gallery/2026/2026-nash-0.jpg",
 		"Nash boys in the common room",
 	),
+
+	new News(
+		"Remove 2027 Welcome Function",
+		"Tiri Pasipanodya, Head of House",
+		[
+			"I know every Head of House will say that their House is a family but Nash House has truly become a piece of me. A piece of my soul. A place where I have met extended brothers whose shoulders I can cry on, which I did last week actually. I would like to create that for you guys.",
+		],
+		"/nash_house/assets/articles/2026/2026_remove_welcome_hoh_address.html",
+		"2026-10-15",
+		"assets/media/images/nash-banner.jpg",
+		"Nash House crest",
+	),
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);

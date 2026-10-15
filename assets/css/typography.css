@@ -82,6 +82,10 @@ p + [role="button"] {
 	margin-top: 0.5rem;
 }
 
+.small {
+	font-size: clamp(0.75rem, 1.5vw, 1rem);
+}
+
 /* Small devices (sm) and up (>= 36rem) */
 @media (min-width: 36rem) {
 }
