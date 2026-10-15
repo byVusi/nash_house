@@ -69,17 +69,27 @@ export function handleItemSection(container, array, buildCardFn, message) {
 }
 
 function categoriseEvents() {
-	const currentMonth = new Date().getMonth();
+	const date = new Date();
+	const currentYear = date.getFullYear();
+	const currentMonth = date.getMonth();
 
 	sortedEvents.forEach((e) => {
-		const month = new Date(e.date).getMonth();
-		if (month === currentMonth) {
+		const _date = new Date(e.date);
+		const year = _date.getFullYear();
+		const month = _date.getMonth();
+		if (month === currentMonth && currentYear === year) {
 			categorisedEvents["this month"].push(e);
-		} else if (month < 5) {
+		}
+
+		if (month >= 0 && month <= 3 && currentYear === year) {
 			categorisedEvents.easter.push(e);
-		} else if (month >= 5 && month < 9) {
+		}
+
+		if (month >= 4 && month <= 7 && currentYear === year) {
 			categorisedEvents["trinity"].push(e);
-		} else {
+		}
+
+		if (month >= 8 && month <= 11 && currentYear === year) {
 			categorisedEvents["michaelmas"].push(e);
 		}
 	});
@@ -253,20 +263,6 @@ function filterMedia() {
 		) {
 			categorisedMedia["this term"].push(mediaItem);
 		}
-
-		// Last term (Previous term based on academic calendar)
-		// if (
-		// 	(mediaMonth >= 4 && mediaMonth <= 7 && mediaYear === currentYear) || // 2nd term was last term (May-Aug)
-		// 	(mediaMonth >= 8 && mediaMonth <= 11 && mediaYear === currentYear) // 3rd term was last term (Sep-Dec)
-		// ) {
-		// 	categorisedMedia["last term"].push(mediaItem);
-		// } else if (
-		// 	mediaMonth >= 0 &&
-		// 	mediaMonth <= 3 &&
-		// 	mediaYear === currentYear - 1 // 1st term was last term (Jan-Apr)
-		// ) {
-		// 	categorisedMedia["last term"].push(mediaItem);
-		// }
 
 		// Last term (Previous term based on academic calendar)
 		if (

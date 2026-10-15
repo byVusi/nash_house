@@ -9,9 +9,15 @@ class Event {
 }
 
 const events = [
-	// 2027 Easter
-	// 2027 Trinity Term
-	// 2027 Michaelmas Term
+	// 2026
+	new Event("Half Term", "2026-10-22"),
+	new Event("School Opens", "2026-10-27"),
+	new Event("Giving Day (Day 1)", "2026-10-28"),
+	new Event("Giving Day (Day 2)", "2026-10-29"),
+	new Event("College Carol Service", "2026-11-08"),
+	new Event("Study Day", "2026-11-09"),
+	new Event("School Examinations Begin", "2026-11-10"),
+	new Event("School Closes", "2026-12-02"),
 ];
 
 export const sortedEvents = sortObjectsByDate(events, "date", true);
