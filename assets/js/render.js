@@ -152,20 +152,33 @@ function filterNews() {
 
 		// Last term (Previous term based on academic calendar)
 		if (
-			(newsMonth >= 4 && newsMonth <= 7 && newsYear === currentYear) || // 2nd term was last term (May-Aug)
-			(newsMonth >= 8 && newsMonth <= 11 && newsYear === currentYear - 1) // 3rd term was last term (Sep-Dec)
+			newsMonth >= 0 &&
+			newsMonth <= 3 &&
+			currentMonth >= 4 &&
+			currentMonth <= 7 &&
+			newsYear === currentYear // 1st term was last term (Jan-Apr)
 		) {
 			categorisedNews["last term"].push(newsItem);
 		} else if (
-			newsMonth >= 0 &&
-			newsMonth <= 3 &&
-			newsYear === currentYear - 1 // 1st term was last term (Jan-Apr)
+			newsMonth >= 4 &&
+			newsMonth <= 7 &&
+			currentMonth >= 8 &&
+			currentMonth <= 11 &&
+			newsYear === currentYear // 2nd term was last term (May-Aug)
+		) {
+			categorisedNews["last term"].push(newsItem);
+		} else if (
+			newsMonth >= 8 &&
+			newsMonth <= 11 &&
+			currentMonth >= 0 &&
+			currentMonth <= 3 &&
+			newsYear === currentYear - 1 // 3rd term was last term (Sep-Dec))
 		) {
 			categorisedNews["last term"].push(newsItem);
 		}
 
-		// This year
 		if (newsYear === currentYear) {
+			// This year
 			categorisedNews["this year"].push(newsItem);
 		}
 
@@ -242,17 +255,42 @@ function filterMedia() {
 		}
 
 		// Last term (Previous term based on academic calendar)
+		// if (
+		// 	(mediaMonth >= 4 && mediaMonth <= 7 && mediaYear === currentYear) || // 2nd term was last term (May-Aug)
+		// 	(mediaMonth >= 8 && mediaMonth <= 11 && mediaYear === currentYear) // 3rd term was last term (Sep-Dec)
+		// ) {
+		// 	categorisedMedia["last term"].push(mediaItem);
+		// } else if (
+		// 	mediaMonth >= 0 &&
+		// 	mediaMonth <= 3 &&
+		// 	mediaYear === currentYear - 1 // 1st term was last term (Jan-Apr)
+		// ) {
+		// 	categorisedMedia["last term"].push(mediaItem);
+		// }
+
+		// Last term (Previous term based on academic calendar)
 		if (
-			(mediaMonth >= 4 && mediaMonth <= 7 && mediaYear === currentYear) || // 2nd term was last term (May-Aug)
-			(mediaMonth >= 8 &&
-				mediaMonth <= 11 &&
-				mediaYear === currentYear - 1) // 3rd term was last term (Sep-Dec)
+			mediaMonth >= 0 &&
+			mediaMonth <= 3 &&
+			currentMonth >= 4 &&
+			currentMonth <= 7 &&
+			mediaYear === currentYear // 1st term was last term (Jan-Apr)
 		) {
 			categorisedMedia["last term"].push(mediaItem);
 		} else if (
-			mediaMonth >= 0 &&
-			mediaMonth <= 3 &&
-			mediaYear === currentYear - 1 // 1st term was last term (Jan-Apr)
+			mediaMonth >= 4 &&
+			mediaMonth <= 7 &&
+			currentMonth >= 8 &&
+			currentMonth <= 11 &&
+			mediaYear === currentYear // 2nd term was last term (May-Aug)
+		) {
+			categorisedMedia["last term"].push(mediaItem);
+		} else if (
+			mediaMonth >= 8 &&
+			mediaMonth <= 11 &&
+			currentMonth >= 0 &&
+			currentMonth <= 3 &&
+			mediaYear === currentYear - 1 // 3rd term was last term (Sep-Dec))
 		) {
 			categorisedMedia["last term"].push(mediaItem);
 		}
