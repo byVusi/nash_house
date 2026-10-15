@@ -72,11 +72,14 @@ function categoriseEvents() {
 	const date = new Date();
 	const currentYear = date.getFullYear();
 	const currentMonth = date.getMonth();
+	const currentDay = date.getDay();
 
 	sortedEvents.forEach((e) => {
 		const _date = new Date(e.date);
 		const year = _date.getFullYear();
 		const month = _date.getMonth();
+		const day = _date.getDay();
+
 		if (month === currentMonth && currentYear === year) {
 			categorisedEvents["this month"].push(e);
 		}

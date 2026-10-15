@@ -46,22 +46,51 @@ export const categorisedEvents = {
 };
 
 export const newsFilterListItems = document.querySelectorAll(
-	'[data-page="news"] aside ul li'
+	'[data-page="news"] aside ul li',
 );
 
 export const mediaFilterListItems = document.querySelectorAll(
-	'[data-page="gallery"] aside ul li'
+	'[data-page="gallery"] aside ul li',
 );
 
 export function formatDay(day) {
 	return day < 10 ? "0" + day : day;
 }
 
-export function sortObjectsByDate(arr, dateKey, direction) {
-	return direction
-		? arr.sort((a, b) => new Date(a[dateKey]) - new Date(b[dateKey]))
-		: arr.sort((a, b) => new Date(b[dateKey]) - new Date(a[dateKey]));
+export function sortObjectsByDate(arr, dateKey, direction = "asc") {
+	// 1. Create a shallow copy to avoid mutating the original array
+	return [...arr].sort((a, b) => {
+		const dateA = new Date(a[dateKey]).getTime();
+		const dateB = new Date(b[dateKey]).getTime();
+
+		// 2. Fallback for invalid or missing dates (pushes them to the bottom)
+		if (isNaN(dateA)) return 1;
+		if (isNaN(dateB)) return -1;
+
+		// 3. Sort based on the explicit direction
+		return direction === "asc" ? dateA - dateB : dateB - dateA;
+	});
 }
+
+export function excludePastDates(arr, dateKey) {
+	// Get the current time once, outside the loop, for better performance
+	const now = Date.now();
+
+	return arr.filter((item) => {
+		const itemDate = new Date(item[dateKey]).getTime();
+
+		// Exclude the object if the date is invalid or if it is in the past
+		if (isNaN(itemDate)) return false;
+
+		return itemDate >= now;
+	});
+}
+
+// export function sortObjectsByDate(arr, dateKey, direction) {
+// 	return direction
+// 		? arr.sort((a, b) => new Date(a[dateKey]) - new Date(b[dateKey]))
+// 		: arr.sort((a, b) => new Date(b[dateKey]) - new Date(a[dateKey]));
+// }
 
 export function createPlaceholder(message) {
 	const placeholder = document.createElement("p");
@@ -167,7 +196,7 @@ export function setupNewsFilter() {
 
 	if (!storedItem) {
 		console.warn(
-			"[News Card Filter] No item has been found in local storage."
+			"[News Card Filter] No item has been found in local storage.",
 		);
 		return;
 	}
@@ -176,7 +205,7 @@ export function setupNewsFilter() {
 		news,
 		categorisedNews[storedItem],
 		buildNewsCard,
-		"No news available"
+		"No news available",
 	);
 
 	newsFilterListItems.forEach((item) => {
@@ -203,7 +232,7 @@ export function setupMediaFilter() {
 		media,
 		categorisedMedia[storedItem],
 		buildMedia,
-		"No media available"
+		"No media available",
 	);
 
 	mediaFilterListItems.forEach((item) => {

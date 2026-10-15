@@ -1,4 +1,4 @@
-import { sortObjectsByDate } from "./utils.js";
+import { sortObjectsByDate, excludePastDates } from "./utils.js";
 
 class Event {
 	constructor(title, date, nextEvent = false) {
@@ -20,7 +20,10 @@ const events = [
 	new Event("School Closes", "2026-12-02"),
 ];
 
-export const sortedEvents = sortObjectsByDate(events, "date", true);
+export const sortedEvents = excludePastDates(
+	sortObjectsByDate(events, "date"),
+	"date",
+);
 
 // Special CSS styling applied when true
 if (sortedEvents.length > 0) sortedEvents[0].nextEvent = true;
