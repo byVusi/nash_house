@@ -64,7 +64,7 @@ const news = [
 		"An U15 All-Star",
 		"Vusi Mathonsi, Housemaster",
 		[
-			"Congratutions to Amani Masuku (LIV), who was named one of the U15 Allstars at the Inanda Hoops Classic Challenge. He was part of the U15 team that finished 2nd, going down to Saheti 33-38, in a tightly contested final. The SJC team included other Nashtonians; Nhlavu Hlungwane (LIV), Zimasa Mabandla (LIV), Sifiso Mkhonza (LIV), Jordan Sithole (LIV) and Hugo Stahljans (LIV).",
+			"Congratutions to Amani Masuku (LIV), who was named one of the U15 All-Stars at the Inanda Hoops Classic Challenge. He was part of the U15 team that finished 2nd, going down to Saheti 33-38, in a tightly contested final. The SJC team included other Nashtonians; Nhlavu Hlungwane (LIV), Zimasa Mabandla (LIV), Sifiso Mkhonza (LIV), Jordan Sithole (LIV) and Hugo Stahljans (LIV).",
 		],
 		"/nash_house/assets/articles/2026_an_all_star.html",
 		"2026-10-26",
