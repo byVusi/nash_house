@@ -68,7 +68,7 @@ const news = [
 		],
 		"/nash_house/assets/articles/2026_an_all_star.html",
 		"2026-10-26",
-		"assets/media/images/gallery/2026/2026_inanda_amani.jpeg",
+		"assets/media/images/gallery/2026/2026-nash-6.jpg",
 		"U15 All-Stars posing for a photo",
 	),
 ];
