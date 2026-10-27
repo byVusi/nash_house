@@ -3,7 +3,7 @@
  * Implements Stale-While-Revalidate, Network-First, and Cache-First strategies.
  */
 
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v1";
 const STATIC_CACHE = `nash_house-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `nash_house-dynamic-${CACHE_VERSION}`;
 const BASE_PATH = "/nash_house";
