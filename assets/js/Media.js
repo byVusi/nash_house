@@ -25,7 +25,7 @@ for (let i = 0; i < 18; i++) {
 }
 
 // 2026 uploads
-for (let i = 0; i < 7; i++) {
+for (let i = 0; i < 6; i++) {
 	media.push(
 		new Media(
 			"2026-10-12",
@@ -33,5 +33,9 @@ for (let i = 0; i < 7; i++) {
 		),
 	);
 }
+
+media.push(
+	new Media("2026-10-26", "assets/media/images/gallery/2026/2026-nash-6.jpg"),
+);
 
 export const sortedMedia = sortObjectsByDate(media, "date", false);

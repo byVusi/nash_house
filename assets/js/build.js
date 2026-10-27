@@ -107,6 +107,7 @@ export function buildMedia(media) {
 	content.setAttribute("src", media.imageSRC);
 	content.setAttribute("loading", "lazy");
 	content.setAttribute("alt", media.imageALT);
+	content.classList.add("gallery-img");
 
 	return content;
 }
