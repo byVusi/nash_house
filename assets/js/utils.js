@@ -248,6 +248,6 @@ export function setupMediaFilter() {
 }
 
 export function initFilters() {
-	localStorage.setItem("media-filter", "last 7 days");
-	localStorage.setItem("news-filter", "last 7 days");
+	localStorage.setItem("media-filter", "this year");
+	localStorage.setItem("news-filter", "this year");
 }

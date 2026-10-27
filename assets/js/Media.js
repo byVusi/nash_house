@@ -25,7 +25,7 @@ for (let i = 0; i < 18; i++) {
 }
 
 // 2026 uploads
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 7; i++) {
 	media.push(
 		new Media(
 			"2026-10-12",
