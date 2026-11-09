@@ -16,6 +16,7 @@ const events = [
 	new Event("School Closes", "2026-12-02"),
 
 	// 2027
+	new Event("Remove Camp", "2027-01-01"),
 	new Event("Interhouse Chess", "2027-01-22"),
 	new Event("GROBS", "2027-02-17"),
 	new Event("Half Term", "2027-02-18"),
