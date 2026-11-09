@@ -309,7 +309,9 @@ function filterMedia() {
 export function render() {
 	if (page?.dataset.page === "home") {
 		const filteredEvents = sortedEvents.filter(
-			(e) => new Date(e.date).getMonth() >= new Date().getMonth(),
+			(e) =>
+				new Date(e.date).getMonth() >= new Date().getMonth() &&
+				new Date(e.date).getFullYear() === new Date().getFullYear(),
 		);
 
 		if (filteredEvents.length > 1) filteredEvents[0].nextEvent = true;
