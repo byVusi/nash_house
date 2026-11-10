@@ -7,7 +7,7 @@ export function buildFeaturedEventCard(event) {
 	const title = document.createElement("div");
 
 	// Different styling for the event coming next
-	event.nextEvent
+	event?.nextEvent
 		? card.classList.add("event-card", "d-flex", "upcoming-event")
 		: card.classList.add("event-card", "d-flex");
 

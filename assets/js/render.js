@@ -55,7 +55,8 @@ export function renderCards(container, buildFn, array, numOfCards) {
 	}
 
 	for (let i = 0; i < numOfCards; i++) {
-		container.appendChild(buildFn(array[i]));
+		const obj = array[i];
+		if (obj) container.appendChild(buildFn(obj));
 	}
 }
 
