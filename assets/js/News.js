@@ -26,7 +26,7 @@ const news = [
 		"2025 House Report",
 		"Mila Xego, Head of House",
 		[
-			"The words “A dream for many, a reality for few”, which are closely related to the house, captures exactly what it means to wear the iconic blue and white Nash colours. To be in Nash is not about the bare minimum - it is about living up to the standards, traditions and values that make the House not just any other House but Nash house. Many people dream of being a part of something so full and rich with heritage and culture, but only a few have the honour of calling themselves a Nashtonian. But as the saying goes “With great power (honour) comes great responsibility”: to give your best, to support your fellow Nashtonians and uphold the pride of the house in everything we do.",
+			"The words “A dream for many, a reality for few”, which are closely related to the house, captures exactly what it means to wear the iconic blue and white Nash colours. To be in Nash is not about the bare minimum - it is about living up to the standards, traditions and values that make the House not just any other House but Nash house.",
 		],
 		"/nash_house/assets/articles/2025_house_report.html",
 		"2025-12-04",
@@ -76,7 +76,7 @@ const news = [
 		"A Farewell to Matrics",
 		"Vusi Mathonsi, Housemaster",
 		[
-			"As the final exam pen is set down and a quiet stillness settles over the quad, a distinct realisation takes hold: the long-anticipated year has finally reached its horizon. Standing together in the uniform worn with pride over the years, the nostalgia arrives not as a single memory, but as a swell of shared early-morning practices, electric warcries, and quiet moments in the common room. For the Matrics of 2026, taking that final step across the threshold is both an ending and a powerful testament to the leadership, unity, and heart given to the House.",
+			"As the final exam pen is set down and a quiet stillness settles over the quad, a distinct realisation takes hold: the long-anticipated year has finally reached its horizon. Standing together in the uniform worn with pride over the years, the nostalgia arrives not as a single memory, but as a swell of shared early-morning practices, electric warcries, and quiet moments in the common room.",
 		],
 		"/nash_house/assets/articles/2026_goodbye_matrics.html",
 		"2026-11-27",
