@@ -49,7 +49,7 @@ const news = [
 	),
 
 	new News(
-		"Remove 2027 Welcome Function",
+		"2027 Remove Welcome",
 		"Tiri Pasipanodya, Head of House",
 		[
 			"I know every Head of House will say that their House is a family but Nash House has truly become a piece of me. A piece of my soul. A place where I have met extended brothers whose shoulders I can cry on, which I did last week actually. I would like to create that for you guys.",
@@ -71,16 +71,18 @@ const news = [
 		"assets/media/images/gallery/2026/2026-nash-6.jpg",
 		"U15 All-Stars posing for a photo",
 	),
-	
+
 	new News(
 		"A Farewell to Matrics",
 		"Vusi Mathonsi, Housemaster",
-		[],
-		"",
+		[
+			"As the final exam pen is set down and a quiet stillness settles over the quad, a distinct realisation takes hold: the long-anticipated year has finally reached its horizon. Standing together in the uniform worn with pride over the years, the nostalgia arrives not as a single memory, but as a swell of shared early-morning practices, electric warcries, and quiet moments in the common room. For the Matrics of 2026, taking that final step across the threshold is both an ending and a powerful testament to the leadership, unity, and heart given to the House.",
+		],
+		"/nash_house/assets/articles/2026_goodbye_matrics.html",
 		"2026-11-27",
-		"",
-		""
-		)
+		"assets/media/images/classes/2026_matrics.png",
+		"Photos of students from the class of 2026",
+	),
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
