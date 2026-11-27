@@ -71,6 +71,16 @@ const news = [
 		"assets/media/images/gallery/2026/2026-nash-6.jpg",
 		"U15 All-Stars posing for a photo",
 	),
+	
+	new News(
+		"A Farewell to Matrics",
+		"Vusi Mathonsi, Housemaster",
+		[],
+		"",
+		"2026-11-27",
+		"",
+		""
+		)
 ];
 
 export const sortedNews = sortObjectsByDate(news, "date", false);
